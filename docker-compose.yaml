@@ -14,18 +14,20 @@ services:
       - 443:443/tcp
       - 53:53/tcp
       - 53:53/udp
-      - ${PIHOLE_WEBPORT:-80}:80/tcp #Allows use of different port to access pihole web interface when other docker containers use port 80
-      # - 5335:5335/tcp # Uncomment to enable unbound access on local server
-      # - 22/tcp # Uncomment to enable SSH
+      # - 67:67/udp # Uncomment to enable DHCP
+      - ${PIHOLE_WEBPORT:-80}:80/tcp # Adjust PIHOLE_WEBPORT if port 80 is in use
+    # cap_add: # Required for DHCP
+      # - NET_ADMIN
     environment:
-      - FTLCONF_LOCAL_IPV4=${FTLCONF_LOCAL_IPV4}
-      - TZ=${TZ:-UTC}
+      - FTLCONF_LOCAL_IPV4=${FTLCONF_LOCAL_IPV4} # Set your LAN's IPv4 address
+      - TZ=${TZ:-UTC} # Set your local timezone
       - WEBPASSWORD=${WEBPASSWORD}
+      # - WEBPASSWORD_FILE=${WEBPASSWORD_FILE} # Uncomment to read password from a file
       - WEBTHEME=${WEBTHEME:-default-light}
-      - REV_SERVER=${REV_SERVER:-false}
-      - REV_SERVER_TARGET=${REV_SERVER_TARGET}
-      - REV_SERVER_DOMAIN=${REV_SERVER_DOMAIN}
-      - REV_SERVER_CIDR=${REV_SERVER_CIDR}
+      # - REV_SERVER=${REV_SERVER:-false} # Uncomment to enable conditional forwarding
+      # - REV_SERVER_TARGET=${REV_SERVER_TARGET}
+      # - REV_SERVER_DOMAIN=${REV_SERVER_DOMAIN}
+      # - REV_SERVER_CIDR=${REV_SERVER_CIDR}
       - PIHOLE_DNS_=127.0.0.1#5335
       - DNSSEC="true"
       - DNSMASQ_LISTENING=single

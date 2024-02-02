@@ -1,4 +1,11 @@
-# Pi-Hole + Unbound - 1 Container
+# cameronaw13's Pihole Unbound container
+
+This forked was made to continue the work of [chriscrowe's pihole-unbound repo](https://github.com/chriscrowe/docker-pihole-unbound) with the addition of automatic dependabot updates making updates almost completely automatic.
+
+In this repo, all images are built and pushed to the github container registry for ease of use.
+
+### ⚠ This image is made solely for my own homelab setup, breaking changes can occur! ⚠
+### ⚠ Do not use in production! ⚠
 
 ## Description
 
@@ -39,18 +46,6 @@ HOSTNAME=pihole
 DOMAIN_NAME=pihole.local
 PIHOLE_WEBPORT=80
 WEBTHEME=default-light
-```
-
-### Using Portainer stacks?
-
-> 2022-3-11: I'm being told that the advice below is no longer true in Portainer. If you're using Portainer, first try it without removing the volumes declaration and see if it works.
-
-Portainer stacks are a little weird and don't want you to declare your named volumes, so remove this block from the top of the `docker-compose.yaml` file before copy/pasting into Portainer's stack editor:
-
-```yaml
-volumes:
-  etc_pihole-unbound:
-  etc_pihole_dnsmasq-unbound:
 ```
 
 ### Running the stack

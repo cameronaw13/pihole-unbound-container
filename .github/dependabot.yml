@@ -26,3 +26,6 @@ updates:
   commit-message:
     prefix: "[Github-Actions]"
     include: "scope"
+  labels:
+    - "github-actions"
+    - "dependencies"

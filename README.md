@@ -1,13 +1,14 @@
 # cameronaw13's Pihole Unbound container
 
-This forked was made to continue the work of [chriscrowe's pihole-unbound repo](https://github.com/chriscrowe/docker-pihole-unbound) with the addition of automatic dependabot updates making updates almost completely automatic.
-
-In this repo, all images are built and pushed to the github container registry for ease of use.
-
 ### ⚠ This image is made solely for my own homelab setup, breaking changes can occur! ⚠
-### ⚠ Do not use in production! ⚠
 
-## Description
+This forked was made to continue the work of [chriscrowe's pihole-unbound repo](https://github.com/chriscrowe/docker-pihole-unbound) with the addition of (almost) automatic dependabot updates.
+
+In this repo, all images are built and pushed to the github container registry rather than dockerhub for ease of use.
+
+Small parts of the workflows were based off of [origamiofficial's repo](https://github.com/origamiofficial/docker-pihole-unbound/tree/main), I recommend using their image if you want more support.
+
+## Original Description
 
 This Docker deployment runs both Pi-Hole and Unbound in a single container.
 

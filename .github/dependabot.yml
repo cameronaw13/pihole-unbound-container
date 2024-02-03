@@ -12,7 +12,7 @@ updates:
   schedule:
     interval: "daily"
   commit-message:
-    prefix: "[Pihole] "
+    prefix: "[Pihole]"
     include: "scope"
   labels:
     - "pihole"
@@ -24,7 +24,7 @@ updates:
   schedule:
     interval: "daily"
   commit-message:
-    prefix: "[Github-Actions] "
+    prefix: "[Github-Actions]"
     include: "scope"
   labels:
     - "github-actions"

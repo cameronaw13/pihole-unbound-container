@@ -98,7 +98,7 @@ jobs:
 
       # Create github release
       - name: Create release
-        uses: ncipollo/release-action@v1.13.0
+        uses: ncipollo/release-action@v1.14.0
         with:
           body: Version changelog listed [here.](https://github.com/pi-hole/docker-pi-hole/releases/tag/${{ steps.parse-dockerfile.outputs.PIHOLE_VER }})
           tag: ${{ steps.parse-dockerfile.outputs.PIHOLE_VER }}
